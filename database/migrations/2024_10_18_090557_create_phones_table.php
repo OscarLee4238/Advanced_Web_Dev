@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->string('photo')->nullable();
             $table->integer('camera_mp');
-            $table->integer('storage'); //gb
+            $table->string('storage'); //gb
             $table->integer('ram'); 
             $table->integer('battery'); //mah
             $table->decimal('screen_size', 3, 1);
