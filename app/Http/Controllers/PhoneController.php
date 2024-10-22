@@ -12,8 +12,11 @@ class PhoneController extends Controller
      */
     public function index()
     {
-        //
+        $phones = Phone::all();
+        return view('phone.index', compact('phones'));
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +39,7 @@ class PhoneController extends Controller
      */
     public function show(Phone $phone)
     {
-        //
+        return view('phone.show')->with('phone', $phone);
     }
 
     /**
