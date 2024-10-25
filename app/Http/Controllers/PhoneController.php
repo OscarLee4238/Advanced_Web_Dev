@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Phone;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhoneController extends Controller
 {
@@ -23,7 +24,7 @@ class PhoneController extends Controller
      */
     public function create()
     {
-        //
+        return view('phone.create');
     }
 
     /**
@@ -31,7 +32,28 @@ class PhoneController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request=validate([
+            'title' => 'required',
+            'description' => 'required|max:500',
+            'release_year' => 'required|integer',
+            'photo' => 'required|image|mimes:jpg,png,jpg,gif|max:2048'
+        ]);
+
+        if ($request->hasFile('photo')) {
+            $imageName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('images/phones'), $imageName);
+        }
+
+        Phone::create([
+            'model' => $request->model,
+            'description' => $request->description,
+            'release_year'=> $request->$release_year,
+            'photo' => $photoName,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        return to_route('book.index')->with('success', 'Book created successfully!');
     }
 
     /**

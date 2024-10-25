@@ -12,7 +12,7 @@
                     <h3 class="font-semibold text-lg mb-4">List of phones:</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach($phones as $phone)
-                        <a href="{{route('phone.shows', $phone) }}">
+                        <a href="{{route('phone.show', $phone) }}">
                             <x-phone-card                                
                                 :model="$phone->model"
                                 :description="$phone->description"
@@ -31,6 +31,8 @@
                                 :purchase="$phone->purchase"
                             />
                         </a>
+
+                        
                         @endforeach
                     </div>
                 </div>
