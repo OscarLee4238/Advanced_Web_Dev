@@ -19,9 +19,9 @@
                         {{ __('View all phones') }}
                     </x-nav-link>
 
-                    <!-- <x-nav-link href="route('phone.index')" :active="request()->routeIs('phone.index')">
-                        {{ __('View All Phones') }}
-                    </x-nav-link> -->
+                    <x-nav-link :href="route('phone.create')" :active="request()->routeIs('phone.create')">
+                        {{ __('Create new phone') }}
+                    </x-nav-link>
 
                 </div>
             </div>

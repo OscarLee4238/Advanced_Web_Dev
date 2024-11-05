@@ -5,6 +5,10 @@
         </h2>
     </x-slot>
 
+    <!-- http://localhost:8000/public/build/images/itemsC:\Users\N00230382\2024_phone_reviews\public\images\items\iphone_16_pro_max.jpg -->
+
+    
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -31,7 +35,6 @@
                                 :purchase="$phone->purchase"
                             />
                         </a>
-
                         
                         @endforeach
                     </div>

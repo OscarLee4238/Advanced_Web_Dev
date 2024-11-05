@@ -2,9 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Phone extends Model
 {
-   // use HasFactory;
+   use HasFactory;
+
+   protected $fillable = [
+      'model',
+      'description',
+      'release_year',
+   ];
 }
